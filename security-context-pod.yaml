@@ -1,0 +1,14 @@
+apiVersion: v1             # Specifies the API version of Kubernetes
+kind: Pod                  # Defines the object type, in this case, a Pod
+metadata:
+  name: security-pod       # The name of the Pod
+spec:
+  containers:
+  - name: nginx-container   # Name of the container within the Pod
+    image: nginx            # Container image to be used (nginx)
+    securityContext:        # Security context for the container
+      runAsUser: 1000      # Run the container as user ID 1000
+      runAsGroup: 3000     # Run the container as group ID 3000
+      capabilities:         # Set specific capabilities for the container
+        add: ["NET_ADMIN"]  # Add the NET_ADMIN capability
+

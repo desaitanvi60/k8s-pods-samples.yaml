@@ -1,0 +1,23 @@
+apiVersion: v1             # Specifies the API version of Kubernetes
+kind: Pod                  # Defines the object type, in this case, a Pod
+metadata:
+  name: configmap-pod      # The name of the Pod
+spec:
+  containers:
+  - name: busybox-container # Name of the container
+    image: busybox          # Container image to be used (busybox)
+    command: ["sh", "-c", "echo The app version is $APP_VERSION"] # Command to print environment variable
+    env:                    # Use ConfigMap for environment variables
+    - name: APP_VERSION     # Variable name
+      valueFrom:
+        configMapKeyRef:
+          name: app-config  # ConfigMap reference
+          key: app_version  # Key in the ConfigMap
+---
+apiVersion: v1             # Specifies the API version of Kubernetes
+kind: ConfigMap            # Defines the object type, in this case, a ConfigMap
+metadata:
+  name: app-config         # The name of the ConfigMap
+data:
+  app_version: "v1.0"      # Data stored in the ConfigMap (key-value pair)
+
