@@ -6,7 +6,7 @@ This repository contains various YAML configuration files for Kubernetes pods, e
 1. configmap-pod.yaml📜
 This file defines a Kubernetes ConfigMap that stores configuration data for applications.A ConfigMap allows you to decouple environment-specific configurations from your container images, helping you manage configurations separately and enabling easy updates without rebuilding your application.
 
-  Key Features:
+Key Features:
 - 🔑 Defines key-value pairs that can be referenced in pods.
 - 🛠️ Helps in providing configuration settings without hardcoding them into the application.
 
