@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: redis-pod                  # Corrected the spelling from 'reddis' to 'redis'
+spec:
+  containers:                      # Changed '-' to 'containers:'
+    - name: redis                  # Corrected the spelling from 'reddis' to 'redis'
+      image: redis                 # Use the official Redis image
+
