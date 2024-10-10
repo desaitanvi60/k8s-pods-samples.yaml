@@ -5,5 +5,5 @@ metadata:
 spec:
   containers:                     
     - name: redis                  # you can use any name 
-      image: redis                 # Use the official Redis image
+      image: redis                 # change the name of image which you want.
 
