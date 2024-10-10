@@ -1,0 +1,27 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: env-pod
+spec:
+  containers:
+    - name: busybox-container
+      image: busybox
+      command: ["sh", "-c", "echo the app is running in $APP_ENV"]
+      env:                    # Define environment variables
+      - name: APP_ENV
+        value: production
+
+
+
+
+
+
+
+            #command: ["sh", "-c", "echo the app is running in $APP_ENV"] 
+            #sh Refers to the shell (/bin/sh)
+            #-c: This flag tells the shell to run a command string passed as an argument.
+            #echo: This prints a message to the console.
+            #The $ symbol denotes that it should use the value of the APP_ENV environment variable.
+            #$APP_ENV: This is an environment variable. 
+            #The $ symbol denotes that it should use the value of the APP_ENV environment variable.
+            #you can change the name of the environment variable to anything you want. ex $APP_NEW to $MY_ENV_VAR
