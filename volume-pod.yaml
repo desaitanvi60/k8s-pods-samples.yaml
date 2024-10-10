@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata: 
+  name: volume-pod
+spec:
+  containers:
+    - name: nginx-container
+      image: nginx
+      volumeMounts:            # Mount volumes to the container
+      - name: nginx-storage    # Volume name
+        mountPath: /usr/share/nginx/html     #This is where NGINX looks for content.
+  volumes:
+    - name: nginx-storage
+      emptyDir: {}
+
+
